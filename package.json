@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "html-pdf": "2.1.0",
+    "node-sass": "^3.13.0"
+  }
+}

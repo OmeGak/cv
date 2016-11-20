@@ -1,0 +1,98 @@
+$letter_width: 8.5in;
+$letter_height: 11in;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #f1f1f1;
+  box-sizing: border-box;
+  -webkit-print-color-adjust: exact;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.page {
+  position: relative;
+  display: block;
+  background: white;
+  page-break-after: auto;
+  margin: 50px;
+  overflow: hidden;
+  // Letter dimensions
+  width: $letter_width;
+  height: $letter_height;
+}
+
+@media print {
+  body {
+    width: $letter_width;
+  }
+
+  body.phantomjs-fix {
+    // XXX: PhantomJS 2 wrong size bug
+    // https://github.com/ariya/phantomjs/issues/12685#issuecomment-89452503
+    zoom: 0.75;
+  }
+
+  .page {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+
+.header {
+  display: -webkit-flex;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  background: #d11e2f;
+  color: white;
+  height: 4cm;
+}
+
+.header-name {
+  font-size: 14pt;
+}
+
+.header-name-first {
+  font-weight: lighter;
+}
+
+.header-name-last {
+  font-weight: bold;
+}
+
+.header-pic {
+  height: 3cm;
+  width: 3cm;
+  border-radius: 50%;
+  position: absolute;
+  top: 0.5cm;
+  left: 1cm;
+}
+
+
+// -----------------------------------------------------------------------------
+
+.content {
+  display: -webkit-flex;
+  height: 100%;
+  margin: 0.5cm;
+}
+
+.content .sidebar {
+  background: green;
+  width: 4cm;
+}
+
+.content .main {
+  -webkit-flex-grow: 1;
+  background: yellow;
+  margin-left: 0.5cm;
+}
