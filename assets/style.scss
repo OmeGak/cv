@@ -1,8 +1,18 @@
+@import 'sass/_typography';
+
+// Sizes
 $letter_width: 8.5in;
 $letter_height: 11in;
 
+// Palette
+$red: #d11e2f;
+$gray: #4d4d4d;
+$dark-gray: #333333;
+$light-gray: #999999;
+
 html,
 body {
+  @extend %font-family-light;
   margin: 0;
   padding: 0;
   background: #f1f1f1;
@@ -16,7 +26,8 @@ body {
 
 .page {
   position: relative;
-  display: block;
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
   background: white;
   page-break-after: auto;
   margin: 50px;
@@ -39,8 +50,6 @@ body {
 
   .page {
     margin: 0;
-    height: 100%;
-    width: 100%;
   }
 }
 
@@ -48,24 +57,25 @@ body {
 // -----------------------------------------------------------------------------
 
 .header {
+  @extend %font-family-ultra-light;
   display: -webkit-flex;
   -webkit-justify-content: center;
   -webkit-align-items: center;
-  background: #d11e2f;
+  background: $red;
   color: white;
   height: 4cm;
 }
 
-.header-name {
-  font-size: 14pt;
+.header > div {
+  text-align: center;
 }
 
-.header-name-first {
-  font-weight: lighter;
+.header-name {
+  font-size: 35pt;
 }
 
 .header-name-last {
-  font-weight: bold;
+  @extend %font-family-normal;
 }
 
 .header-pic {
@@ -81,18 +91,38 @@ body {
 // -----------------------------------------------------------------------------
 
 .content {
+  color: $gray;
   display: -webkit-flex;
-  height: 100%;
   margin: 0.5cm;
+  -webkit-flex-grow: 1;
+
+  h1 {
+    @extend %font-family-condensed-bold;
+    font-size: 1em;
+    font-weight: inherit;
+    margin: 0;
+  }
+
+  section:not(:first-child) {
+    margin-top: 1em;
+  }
 }
 
 .content .sidebar {
-  background: green;
+  // border: 1px solid black;
   width: 4cm;
+
+  h1 {
+    color: $red;
+  }
 }
 
 .content .main {
+  // border: 1px solid black;
   -webkit-flex-grow: 1;
-  background: yellow;
   margin-left: 0.5cm;
+
+  h1 {
+    color: $gray;
+  }
 }
