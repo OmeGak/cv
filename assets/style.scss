@@ -3,6 +3,8 @@
 // Sizes
 $letter_width: 8.5in;
 $letter_height: 11in;
+$document_left_margin: 1cm;
+$sidebar_width: 4cm;
 
 // Palette
 $red: #d11e2f;
@@ -17,6 +19,7 @@ body {
   padding: 0;
   background: #f1f1f1;
   box-sizing: border-box;
+  font-size: 10.95pt;
   -webkit-print-color-adjust: exact;
 }
 
@@ -71,20 +74,32 @@ body {
 }
 
 .header-name {
-  font-size: 35pt;
+  font-size: 40pt;
 }
 
 .header-name-last {
   @extend %font-family-normal;
 }
 
+.header-title {
+  font-size: 14pt;
+}
+
+.header-tagline {
+  font-size: 12pt;
+}
+
 .header-pic {
-  height: 3cm;
-  width: 3cm;
-  border-radius: 50%;
+  width: $sidebar_width;
   position: absolute;
   top: 0.5cm;
-  left: 1cm;
+  left: $document_left_margin;
+
+  img {
+    border-radius: 50%;
+    height: 3cm;
+    width: 3cm;
+  }
 }
 
 
@@ -93,12 +108,13 @@ body {
 .content {
   color: $gray;
   display: -webkit-flex;
-  margin: 0.5cm;
+  margin: 0.5cm 1cm;
   -webkit-flex-grow: 1;
 
   h1 {
     @extend %font-family-condensed-bold;
-    font-size: 1em;
+    text-transform: uppercase;
+    font-size: 14.4pt;
     font-weight: inherit;
     margin: 0;
   }
@@ -109,8 +125,7 @@ body {
 }
 
 .content .sidebar {
-  // border: 1px solid black;
-  width: 4cm;
+  width: $sidebar_width;
 
   h1 {
     color: $red;
