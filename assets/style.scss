@@ -1,16 +1,22 @@
-@import 'sass/_typography';
+@import 'sass/typography';
 
-// Sizes
-$letter_width: 8.5in;
-$letter_height: 11in;
-$document_left_margin: 1cm;
-$sidebar_width: 4cm;
 
-// Palette
+// -- Sizes --------------------------------------------------------------------
+
+$letter-width: 8.5in;
+$letter-height: 11in;
+$document-left-margin: 1cm;
+$sidebar-width: 4cm;
+
+// -- Palette ------------------------------------------------------------------
+
 $red: #d11e2f;
 $gray: #4d4d4d;
-$dark-gray: #333333;
-$light-gray: #999999;
+$dark-gray: #333;
+$light-gray: #999;
+
+// -----------------------------------------------------------------------------
+
 
 html,
 body {
@@ -23,9 +29,11 @@ body {
   -webkit-print-color-adjust: exact;
 }
 
-*, *:before, *:after {
+// sass-lint:disable single-line-per-selector
+*, *::before, *::after {
   box-sizing: inherit;
 }
+// sass-lint:enable single-line-per-selector
 
 .page {
   position: relative;
@@ -36,13 +44,13 @@ body {
   margin: 50px;
   overflow: hidden;
   // Letter dimensions
-  width: $letter_width;
-  height: $letter_height;
+  width: $letter-width;
+  height: $letter-height;
 }
 
 @media print {
   body {
-    width: $letter_width;
+    width: $letter-width;
   }
 
   body.phantomjs-fix {
@@ -90,10 +98,10 @@ body {
 }
 
 .header-pic {
-  width: $sidebar_width;
+  width: $sidebar-width;
   position: absolute;
   top: 0.5cm;
-  left: $document_left_margin;
+  left: $document-left-margin;
 
   img {
     border-radius: 50%;
@@ -125,7 +133,7 @@ body {
 }
 
 .content .sidebar {
-  width: $sidebar_width;
+  width: $sidebar-width;
 
   h1 {
     color: $red;
