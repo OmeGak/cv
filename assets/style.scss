@@ -138,6 +138,16 @@ body {
   h1 {
     color: $red;
   }
+
+  .piped-list > span {
+    &:not(.shrinking-text) {
+      white-space: nowrap;
+    }
+
+    &:not(:last-child)::after {
+      content: ', ';
+    }
+  }
 }
 
 .content .main {
