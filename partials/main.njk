@@ -1,12 +1,115 @@
+{% macro render_job(title, location, from_dt, to_dt, hint=none, url=none) %}
+  <div class="timeline-entry">
+    <div class="entry-meta">
+      <span class="time">{{ from_dt }} &mdash; {{ to_dt }}</span>
+      {% if url %}
+        <a href="{{ url }}">{{ url }}</a>
+      {% endif %}
+      {{ hint }}
+    </div>
+    <div class="entry-main">
+      <span class="entry-title">{{ title }}</span>
+      <span class="highlight">{{ location }}</span>
+    </div>
+    <div class="entry-details">
+      {{ caller() }}
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro render_timeline_row(title, year, location) %}
+  <div class="timeline-row">
+    <div class="time">{{ year }}</div>
+    <div>
+      <span class="title">{{ title }}</span>
+      {%- if location -%}
+        , {{ location }}
+      {%- endif %}
+    </div>
+  </div>
+{% endmacro %}
+
 <section>
   <h1>Experience</h1>
+  {% call render_job(title="Full-Stack Software Developer", location="CERN: Indico", from_dt="2013 Mar", to_dt="now", url="http://indico-software.org/") %}
+    {# Indico, an open source web application for event organization used at CERN and 150+ other institutions. My job involves extensive use of Python, Javascript, Jinja (HTML) and SASS (CSS), as well as making use of several frameworks (Flask, AngularJS, Compass), libraries (jQuery, SQLAlchemy, pytest) and other technologies (PostgreSQL, Redis, Sphinx, Git). Moreover, my tasks also include orchestration of 15+ machines with Puppet and service operations in general. #}
+    Indico is an open source web application for event organization used at CERN and 150+ other institutions. My job involves developing, and service reliability.
+  {% endcall %}
+
+  {% call render_job(title="Software Engineer", location="CERN", from_dt="2012 Jun", to_dt="2012 Sep") %}
+    Summer student position. Data visualizations and front-end desktop interfaces, using Java EE and Swing, for the weak magnet safety system of the LHC.
+  {% endcall %}
 </section>
-<section>
-  <h1>Certificates</h1>
-</section>
+
 <section>
   <h1>Education</h1>
+  {% call render_job(title="Master in Machine Learning", location="Universty of Granada",
+                     from_dt="2012 Oct", to_dt="2016 Sep", hint="GPA: 2.7") %}{% endcall %}
+  {% call render_job(title="Master in Computer Science", location="Universty of Jaén",
+                     from_dt="2010 Sep", to_dt="2012 Jul", hint="GPA: 3.54") %}{% endcall %}
+  {% call render_job(title="Degree in Computer Engineering", location="Universty of Jaén",
+                     from_dt="2007 Sep", to_dt="2010 Jul", hint="GPA: 2.39") %}{% endcall %}
 </section>
+
+<section>
+  <h1>Certificates</h1>
+
+  <div class="timeline-row">
+    <div class="time">2016</div>
+    <div>
+      <span class="title">Certified White Hat</span>, CERN
+    </div>
+  </div>
+
+  <div class="timeline-row">
+    <div class="time">2015</div>
+    <div>
+      <span class="title">CERN School of Computing</span>, University of Kavala (Greece)
+    </div>
+    {# <div class="entry-details">
+      Computer architecture performance tuning, cloud storage technologies, networking QoS, physics computing, software design for many-cores.
+    </div> #}
+  </div>
+
+  <div class="timeline-row">
+    <div class="time">2014</div>
+    <div>
+      <span class="title">Advanced Python</span>, CERN
+    </div>
+  </div>
+
+  <div class="timeline-row">
+    <div class="time">2013</div>
+    <div>
+      <span class="title">Design for Usability</span>, CERN
+    </div>
+  </div>
+
+  <div class="timeline-row">
+    <div class="time">2011</div>
+    <div>
+      <span class="title">Exchange program at Tokyo Univesity of Science</span>
+    </div>
+  </div>
+
+  <div class="timeline-row">
+    <div class="time">2010</div>
+    <div>
+      <span class="title">Exchange program at University of Central Florida</span>
+    </div>
+  </div>
+</section>
+
+
+
 <section>
   <h1>Awards</h1>
+  {{ render_timeline_row(title="Platinum Curriculum recognition for academic and social merits",
+                         year="2012", location="University of Jaén") }}
+  {{ render_timeline_row(title="Top of my Class at Master in Computer Science",
+                         year="2012", location="University of Jaén") }}
+  {{ render_timeline_row(title="Best outgoing student in the International Mobility Program",
+                         year="2011", location="University of Jaén") }}
+  {{ render_timeline_row(title="Top of my Class at Degree in Computer Engineering",
+                         year="2010", location="University of Jaén") }}
 </section>
