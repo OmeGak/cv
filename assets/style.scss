@@ -147,5 +147,14 @@ body {
 
   h1 {
     color: $gray;
+    display: -webkit-flex;
+
+    &::after {
+      border-bottom: 1px solid $gray;
+      content: ' ';
+      flex: 1;
+      margin-bottom: 0.1cm;
+      margin-left: 0.1cm;
+    }
   }
 }
