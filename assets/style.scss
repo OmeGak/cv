@@ -72,6 +72,7 @@ body {
   display: -webkit-flex;
   -webkit-justify-content: center;
   -webkit-align-items: center;
+  -webkit-flex-shrink: 0;
   background: $red;
   color: white;
   height: 4cm;
@@ -133,7 +134,9 @@ body {
 }
 
 .content .sidebar {
+  -webkit-flex-shrink: 0;
   width: $sidebar-width;
+  overflow: hidden;
 
   h1 {
     color: $red;
