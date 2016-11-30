@@ -1,0 +1,44 @@
+.timeline-entry {
+  &:not(:first-of-type) {
+    margin-top: 1em;
+  }
+
+  .entry-meta {
+    display: -webkit-flex;
+    justify-content: space-between;
+    color: $light-gray;
+    font-size: 9pt;
+  }
+
+  .entry-main {
+    display: -webkit-flex;
+    justify-content: space-between;
+  }
+
+  .entry-content {
+    -webkit-flex-grow: 1;
+  }
+
+  .entry-details {
+    font-size: 9pt;
+    text-align: justify;
+    margin-top: 0.1cm;
+    margin-left: 0.5cm;
+  }
+
+  .entry-title {
+    font-weight: bold;
+  }
+}
+
+.timeline-row {
+  display: flex;
+
+  .time {
+    margin: 0 1em;
+  }
+
+  .title {
+    font-weight: bold;
+  }
+}
