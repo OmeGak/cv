@@ -2,13 +2,24 @@
 'use strict'
 
 var fs = require('fs')
-var pdf = require('html-pdf')
-var sass = require('node-sass')
+var fontAwesome = require('node-font-awesome')
+var gulp = require('gulp')
 var nunjucks = require('nunjucks')
 var path = require('path')
+var pdf = require('html-pdf')
+var sass = require('node-sass')
+
+
+// -- Font-Awesome -------------------------------------------------------------
+
+var fontAwesomeScss = path.join(fontAwesome.scssPath, '*')
+
+gulp.src(fontAwesome.fonts).pipe(gulp.dest('assets/fonts'))
+gulp.src(fontAwesomeScss).pipe(gulp.dest('assets/sass/font-awesome'))
 
 
 // -- Render SASS --------------------------------------------------------------
+
 var scssInPath = 'assets/style.scss'
 var scssOutPath = 'assets/static/style.css'
 

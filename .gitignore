@@ -1,3 +1,5 @@
 assets/static/
+assets/fonts/
+assets/sass/font-awesome/
 node_modules/
 cv.html
