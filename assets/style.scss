@@ -11,6 +11,7 @@ $red: #d11e2f;
 $gray: #4d4d4d;
 $dark-gray: #333;
 $light-gray: #999;
+$lighter-gray: #bbb;
 
 // -----------------------------------------------------------------------------
 
@@ -71,19 +72,14 @@ body {
 .header {
   @extend %font-family-ultra-light;
   display: -webkit-flex;
-  -webkit-justify-content: center;
   -webkit-align-items: center;
   -webkit-flex-shrink: 0;
-  background: $red;
-  color: white;
   height: 4cm;
-}
-
-.header > div {
-  text-align: center;
+  padding: 0 1cm;
 }
 
 .header-name {
+  color: $red;
   font-size: 40pt;
 }
 
@@ -101,14 +97,34 @@ body {
 
 .header-pic {
   width: $sidebar-width;
-  position: absolute;
-  top: 0.5cm;
+  text-align: center;
   left: $document-left-margin;
 
   img {
     border-radius: 50%;
     height: 3cm;
     width: 3cm;
+  }
+
+}
+
+.header-content {
+  display: -webkit-flex;
+  margin-left: 0.5cm;
+  -webkit-flex-grow: 1;
+
+  div:first-child {
+    -webkit-flex-grow: 1;
+  }
+}
+
+.header-details {
+  align-self: flex-end;
+  color: $light-gray;
+  text-align: right;
+
+  .fa {
+    color: $lighter-gray;
   }
 }
 
