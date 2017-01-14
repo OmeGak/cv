@@ -22,12 +22,18 @@
   .entry-details {
     font-size: 9pt;
     text-align: justify;
-    margin-top: 0.1cm;
+    margin-top: 0.05cm;
     margin-left: 0.5cm;
   }
 
   .entry-title {
     @extend %font-family-medium;
+  }
+
+  ul {
+    list-style: square;
+    margin: 0;
+    padding-left: 0;
   }
 }
 
