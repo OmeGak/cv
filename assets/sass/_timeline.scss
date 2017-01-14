@@ -27,7 +27,7 @@
   }
 
   .entry-title {
-    font-weight: bold;
+    @extend %font-family-medium;
   }
 }
 

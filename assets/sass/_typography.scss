@@ -1,17 +1,70 @@
+@font-face {
+  font-family: 'ProperHelvetica';
+  src: local('HelveticaNeue'), local('Helvetica Neue');
+}
+
+@font-face {
+  font-family: 'ProperHelvetica';
+  src: local('HelveticaNeue-Italic'), local('Helvetica Neue Italic');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'ProperHelveticaLight';
+  src: local('HelveticaNeue-Light'), local('Helvetica Neue Light');
+}
+
+@font-face {
+  font-family: 'ProperHelveticaLight';
+  src: local('HelveticaNeue-LightItalic'), local('Helvetica Neue LightItalic');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'ProperHelveticaUltraLight';
+  src: local('HelveticaNeue-UltraLight'), local('Helvetica Neue UltraLight');
+}
+
+@font-face {
+  font-family: 'ProperHelveticaUltraLight';
+  src: local('HelveticaNeue-UltraLightItalic'), local('Helvetica Neue UltraLightItalic');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'ProperHelveticaUltraLight';
+  src: local('HelveticaNeue-UltraLight'), local('Helvetica Neue UltraLight');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'ProperHelveticaMedium';
+  src: local('HelveticaNeue-Medium'), local('Helvetica Neue Medium');
+}
+
+@font-face {
+  font-family: 'ProperHelveticaCondensed';
+  src: local('HelveticaNeue-CondensedBold'), local('Helvetica Neue CondensedBold');
+}
+
 %font-family-normal {
-  font-family: 'HelveticaNeue', 'Helvetica Neue';
+  font-family: 'ProperHelvetica';
+}
+
+%font-family-medium {
+  font-family: 'ProperHelveticaMedium';
 }
 
 %font-family-light {
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light';
+  font-family: 'ProperHelveticaLight';
 }
 
 %font-family-ultra-light {
-  font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight';
+  font-family: 'ProperHelveticaUltraLight';
 }
 
-%font-family-condensed-bold {
-  font-family: 'HelveticaNeue-CondensedBold', 'Helvetica Neue CondensedBold';
+%font-family-condensed {
+  font-family: 'ProperHelveticaCondensed';
 }
 
 .highlight {
