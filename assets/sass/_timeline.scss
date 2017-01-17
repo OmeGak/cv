@@ -1,4 +1,6 @@
 .timeline-entry {
+  $font-size: 9pt;
+
   &:not(:first-of-type) {
     margin-top: 1em;
   }
@@ -7,7 +9,7 @@
     display: -webkit-flex;
     justify-content: space-between;
     color: $light-gray;
-    font-size: 9pt;
+    font-size: $font-size;
   }
 
   .entry-main {
@@ -15,25 +17,29 @@
     justify-content: space-between;
   }
 
-  .entry-content {
-    -webkit-flex-grow: 1;
+  .entry-description,
+  .entry-details {
+    font-size: $font-size;
+    text-align: justify;
+    margin-top: 0.05cm;
+  }
+
+  .entry-description {
+    font-style: italic;
   }
 
   .entry-details {
-    font-size: 9pt;
-    text-align: justify;
-    margin-top: 0.05cm;
     margin-left: 0.5cm;
+
+    ul {
+      list-style: square;
+      margin: 0;
+      padding-left: 0;
+    }
   }
 
   .entry-title {
     @extend %font-family-medium;
-  }
-
-  ul {
-    list-style: square;
-    margin: 0;
-    padding-left: 0;
   }
 }
 
