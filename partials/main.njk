@@ -23,14 +23,23 @@
   </div>
 {% endmacro %}
 
-{% macro render_timeline_row(title, year, location) %}
+{% macro render_timeline_row(title, year, location, description=none) %}
   <div class="timeline-row">
     <div class="time">{{ year }}</div>
     <div>
-      <span class="title">{{ title }}</span>
-      {%- if location -%}
-        , {{ location }}
-      {%- endif %}
+      <div class="">
+        <span class="title">{{ title }}</span>
+        {% if location %}
+          <span class="location">({{ location }})</span>
+        {% endif %}
+      </div>
+      {% if description %}
+        <div class="description">
+          <ul>
+            <li>{{ description }}</li>
+          </ul>
+        </div>
+      {% endif %}
     </div>
   </div>
 {% endmacro %}
@@ -85,37 +94,14 @@
 
 <section>
   <h1>Training</h1>
-
-  <div class="timeline-row">
-    <div class="time">2016</div>
-    <div>
-      <span class="title">Certified White Hat</span>, CERN
-    </div>
-  </div>
-
-  <div class="timeline-row">
-    <div class="time">2015</div>
-    <div>
-      <span class="title">CERN School of Computing</span>, University of Kavala (Greece)
-    </div>
-    {# <div class="entry-details">
-      Computer architecture performance tuning, cloud storage technologies, networking QoS, physics computing, software design for many-cores.
-    </div> #}
-  </div>
-
-  <div class="timeline-row">
-    <div class="time">2014</div>
-    <div>
-      <span class="title">Advanced Python</span>, CERN
-    </div>
-  </div>
-
-  <div class="timeline-row">
-    <div class="time">2013</div>
-    <div>
-      <span class="title">Design for Usability</span>, CERN
-    </div>
-  </div>
+  {{ render_timeline_row(title="Certified White Hat", year="2016", location="CERN",
+                         description="Injections, cross-site scripting, request forgery, race conditions, framework exploits, etc.") }}
+  {{ render_timeline_row(title="CERN School of Computing", year="2015", location="University of Kavala",
+                         description="Multicore programming, architecture performance tuning, cloud storage, networking QoS, data analysis.") }}
+  {{ render_timeline_row(title="Advanced Python",
+                         year="2014", location="CERN") }}
+  {{ render_timeline_row(title="Design for Usability",
+                         year="2013", location="CERN") }}
 </section>
 
 

@@ -1,6 +1,6 @@
-.timeline-entry {
-  $font-size: 9pt;
+$font-size: 9pt;
 
+.timeline-entry {
   &:not(:first-of-type) {
     margin-top: 1em;
   }
@@ -21,7 +21,6 @@
   .entry-details {
     font-size: $font-size;
     text-align: justify;
-    margin-top: 0.05cm;
   }
 
   .entry-description {
@@ -30,6 +29,7 @@
 
   .entry-details {
     margin-left: 0.5cm;
+    margin-top: 0.05cm;
 
     ul {
       list-style: square;
@@ -45,12 +45,42 @@
 
 .timeline-row {
   display: flex;
+  align-items: baseline;
+  font-size: $font-size;
+
+  &:not(:first-of-type) {
+    margin-top: 0.1cm;
+  }
 
   .time {
-    margin: 0 1em;
+    color: $light-gray;
+    margin-right: 0.1cm;
   }
 
   .title {
-    font-weight: bold;
+    font-size: 10pt;
+  }
+
+  .location {
+    color: $light-gray;
+  }
+
+  .description {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding-left: 0;
+    }
+
+    li {
+      position: relative;
+
+      &::before {
+        content: '■';
+        color: $light-gray;
+        left: -1em;
+        position: absolute;
+      }
+    }
   }
 }
