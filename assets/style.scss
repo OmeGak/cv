@@ -128,6 +128,32 @@ body {
   }
 }
 
+.footer {
+  border-top: 2px solid $red;
+  color: $light-gray;
+  display: flex;
+  justify-content: center;
+  font-size: 9pt;
+  margin: 0 1cm;
+  padding: 0.5em 0;
+  text-align: center;
+
+  .love-left {
+    flex: 1;
+    text-align: right;
+  }
+
+  .love-center {
+    flex-grow: 0;
+    margin: 0 0.25em;
+  }
+
+  .love-right {
+    flex: 1;
+    text-align: left;
+  }
+}
+
 
 // -----------------------------------------------------------------------------
 
@@ -165,8 +191,13 @@ body {
     }
 
     &:not(:last-child)::after {
+      // content: ' | ';
       content: ', ';
     }
+  }
+
+  .lang-level {
+    color: $light-gray;
   }
 }
 
@@ -174,6 +205,7 @@ body {
   // border: 1px solid black;
   -webkit-flex-grow: 1;
   margin-left: 0.5cm;
+  overflow: hidden;
 
   h1 {
     color: $gray;
