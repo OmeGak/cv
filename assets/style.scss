@@ -97,7 +97,6 @@ body {
 
 .header-pic {
   width: $sidebar-width;
-  text-align: center;
   left: $document-left-margin;
 
   img {
@@ -105,7 +104,6 @@ body {
     height: 3cm;
     width: 3cm;
   }
-
 }
 
 .header-content {
