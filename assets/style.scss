@@ -3,7 +3,7 @@
 $letter-width: 8.5in;
 $letter-height: 11in;
 $document-left-margin: 1cm;
-$sidebar-width: 4cm;
+$sidebar-width: 4.1cm;
 
 // -- Palette ------------------------------------------------------------------
 
@@ -74,7 +74,7 @@ body {
   display: -webkit-flex;
   -webkit-align-items: center;
   -webkit-flex-shrink: 0;
-  height: 4cm;
+  height: $sidebar-width;
   padding: 0 1cm;
 }
 
