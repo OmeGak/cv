@@ -89,10 +89,16 @@ body {
 
 .header-title {
   font-size: 14pt;
+
+  .separator {
+    color: $red;
+    font-weight: bold;
+  }
 }
 
 .header-tagline {
   font-size: 12pt;
+  font-style: italic;
 }
 
 .header-pic {
@@ -156,10 +162,10 @@ body {
 // -----------------------------------------------------------------------------
 
 .content {
-  color: $gray;
   display: -webkit-flex;
-  margin: 0.5cm 1cm;
   -webkit-flex-grow: 1;
+  color: $gray;
+  margin: 0.5cm 1cm;
 
   h1 {
     @extend %font-family-condensed;
