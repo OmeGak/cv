@@ -23,7 +23,7 @@
   </div>
 {% endmacro %}
 
-{% macro render_timeline_row(title, year, location, description=none) %}
+{% macro render_timeline_row(title, year, location=none, description=none) %}
   <div class="timeline-row">
     <div class="time">{{ year }}</div>
     <div>
@@ -116,4 +116,13 @@
                          year="2011", location="University of Jaén") }}
   {{ render_timeline_row(title="Top of my Class at Degree in Computer Engineering",
                          year="2010", location="University of Jaén") }}
+</section>
+
+<section>
+  <h1>And more</h1>
+  {{ render_timeline_row(title="Talk: The path of code linting", year="2017") }}
+  {{ render_timeline_row(title="Talk: Flex-box, the yoga of CSS", year="2017") }}
+  {{ render_timeline_row(title="Workshop: Hands-on tutorial on Git", year="2016") }}
+  {{ render_timeline_row(title="Volunteering: Organized and mentored Summer Student Webfest hackathons", year="201X", location="Geneva") }}
+  {{ render_timeline_row(title="Volunteering: Organized 5K+ visitor Japanese culture event", year="2011", location="Jaén") }}
 </section>
