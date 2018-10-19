@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "build": "scripts/build.js"
+  },
   "dependencies": {
     "gulp": "^3.9.1",
     "html-pdf": "2.1.0",
