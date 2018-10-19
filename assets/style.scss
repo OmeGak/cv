@@ -51,6 +51,8 @@ body {
 }
 
 @media print {
+  @page { margin: 0; }
+
   body {
     width: $letter-width;
   }
