@@ -6,7 +6,6 @@ var fontAwesome = require('node-font-awesome')
 var gulp = require('gulp')
 var nunjucks = require('nunjucks')
 var path = require('path')
-var pdf = require('html-pdf')
 var sass = require('node-sass')
 
 
@@ -42,21 +41,4 @@ nunjucks.render('cv.njk', function handleNunjucksRender(err, res) {
   var path = 'cv.html'
   fs.writeFileSync(path, res)
   console.log(path)
-  generatePdf(path)
 })
-
-
-// -- Generate PDF -------------------------------------------------------------
-
-function generatePdf(htmlPath) {
-  var html = fs.readFileSync(htmlPath, 'utf8')
-  var options = {
-    format: 'Letter',
-    base: 'file://' + path.resolve(htmlPath)
-  }
-
-  pdf.create(html, options).toFile('cv.pdf', function handlePdfCreate(err, res) {
-    if (err) { return console.log(err) }
-    console.log(res)
-  })
-}
