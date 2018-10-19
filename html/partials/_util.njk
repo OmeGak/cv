@@ -1,0 +1,15 @@
+{% macro shrink() %}
+  {% set text = caller().val %}
+  {% for char in text %}
+    {#--#}<span>{{ char }}</span>{#--#}
+  {% endfor %}
+{% endmacro %}
+
+<script>
+  var $shrinkingText = document.getElementsByClassName('shrinking-text')[0];
+  for (var i = 0, len = $shrinkingText.children.length; i < len; i++) {
+    var reduction = 500 / (500 + i)
+    reduction = Math.max(0.4, reduction)
+    $shrinkingText.children[i].style.cssText = 'font-size:' + reduction + 'em; opacity: ' + reduction / 2
+  }
+</script>

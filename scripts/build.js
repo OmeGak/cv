@@ -36,7 +36,7 @@ sass.render({
 
 // -- Generate HTML ------------------------------------------------------------
 
-nunjucks.render('cv.njk', function handleNunjucksRender(err, res) {
+nunjucks.render('html/cv.njk', function handleNunjucksRender(err, res) {
   if (err) { return console.log(err) }
   var path = 'cv.html'
   fs.writeFileSync(path, res)
