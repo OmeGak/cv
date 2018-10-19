@@ -47,41 +47,43 @@
 <section>
   <h1>Experience</h1>
 
-  {% call render_job(title="Full-Stack Software Developer", location="Indico (CERN)",
-                     from_dt="2013 Mar", to_dt="now", url="http://indico-software.org/",
-                     description="Indico is a web application for event organization used at CERN, UN, Fermilab, and 150+ other
-                                  institutions.") %}
+  {% call render_job(title="Chief Technology Officer", location="Bity (Neuchâtel)",
+                     from_dt="2017 Mar", to_dt="now", url="https://bity.com",
+                     description="Bity is a Swiss tech startup of 30~ employees offering cryptocurrency exchange services online.") %}
     <ul>
-      <li>Migrated Flask application from ZODB, an object-oriented database, to PostgreSQL.</li>
-      <li>Refactored complete back-end and most of front-end, substantially improving user experience.</li>
-      <li>Introduced numerous reusable UI components to enforce visual consistency application-wide.</li>
-      <li>More: testing, machine orchestration, integration with LDAP, user support, technical training, etc.</li>
+      <li>Developed a price trackign software, researched off-chain payment channels, designed new products.</li>
+      <li>Bootstraped the engineering team (10+ people) and coordinated the transition away from legacy systems.</li>
+      <li>Built company culture, set up tools and processes for collaboration within and across different teams.</li>
     </ul>
   {% endcall %}
 
-  {% call render_job(title="Data Visualization Engineer", location="CERN", from_dt="2012 Jun", to_dt="2012 Sep") %}
+  {% call render_job(title="Full-Stack Software Developer", location="Indico (CERN)",
+                     from_dt="2013 Mar", to_dt="2017 Feb", url="https://getindico.io",
+                     description="Indico is a web application for conference organization used at CERN, UN, Fermilab, and 150+ other places.") %}
     <ul>
-      <li>Developed interactive tool for LHC data visualization in Java EE and integrated it into Java Swing app.</li>
+      <li>Refactored complete back-end and most of front-end, substantially improving performance and usability.</li>
+      <li>Migrated Flask application from ZODB, an object-oriented database, to PostgreSQL.</li>
+      <li>More: VM orchestration, LDAP integration, testing, user support, technical training.</li>
     </ul>
   {% endcall %}
 </section>
 
 <section>
   <h1>Education</h1>
-  {% call render_job(title="Master in Machine Learning", location="Universty of Granada",
+  {% call render_job(title="Master in Machine Learning", location="University of Granada",
                      from_dt="2012 Oct", to_dt="2016 Sep", hint="GPA: 2.4") %}
     <ul>
       <li>Thesis: Survey on style transfer techniques and generative models with neural networks.</li>
     </ul>
   {% endcall %}
-  {% call render_job(title="Master in Computer Science", location="Universty of Jaén",
+  {% call render_job(title="Master in Computer Science", location="University of Jaén",
                      from_dt="2010 Sep", to_dt="2012 Jul", hint="GPA: 3.54") %}
     <ul>
       <li>Thesis: Evacuation route discovery on catastrophe scenarios using ant colony optimization.</li>
       <li>Exchange programs at <em>University of Central Florida</em> and <em>Tokyo Univesity of Science</em>.</li>
     </ul>
   {% endcall %}
-  {% call render_job(title="Degree in Computer Engineering", location="Universty of Jaén",
+  {% call render_job(title="Degree in Computer Engineering", location="University of Jaén",
                      from_dt="2007 Sep", to_dt="2010 Jul", hint="GPA: 2.39") %}
     <ul>
       <li>Directed and hosted a weekly program about technology at <em>UniRadio Jaén</em> radio station.</li>
@@ -96,10 +98,7 @@
                          description="Injections, cross-site scripting, request forgery, race conditions, framework exploits, etc.") }}
   {{ render_timeline_row(title="CERN School of Computing", year="2015", location="University of Kavala",
                          description="Multicore programming, architecture performance tuning, cloud storage, networking QoS, data analysis.") }}
-  {{ render_timeline_row(title="Advanced Python",
-                         year="2014", location="CERN") }}
-  {{ render_timeline_row(title="Design for Usability",
-                         year="2013", location="CERN") }}
+  {{ render_timeline_row(title="Advanced Python", year="2014", location="CERN") }}
 </section>
 
 <section>
@@ -108,17 +107,15 @@
                          year="2012", location="University of Jaén") }}
   {{ render_timeline_row(title="Top of my Class at Master in Computer Science",
                          year="2012", location="University of Jaén") }}
-  {{ render_timeline_row(title="Best student in the International Mobility Program",
-                         year="2011", location="University of Jaén") }}
   {{ render_timeline_row(title="Top of my Class at Degree in Computer Engineering",
                          year="2010", location="University of Jaén") }}
 </section>
 
 <section>
-  <h1>And more</h1>
-  {{ render_timeline_row(title="Talk: The path of code linting", year="2017") }}
-  {{ render_timeline_row(title="Talk: Flex-box, the yoga of CSS", year="2017") }}
+  <h1>And other stuff</h1>
+  {{ render_timeline_row(title="Talks: \"Computing for decentralized systems\" and \"The rise of digital nations\"", year="2018") }}
+  {{ render_timeline_row(title="Talks: \"The path of code linting\" and \"Flex-box, the yoga of CSS\"", year="2017") }}
   {{ render_timeline_row(title="Workshop: Hands-on tutorial on Git", year="2016") }}
-  {{ render_timeline_row(title="Volunteering: Organized and mentored Summer Student Webfest hackathons", year="201X", location="Geneva") }}
+  {{ render_timeline_row(title="Volunteering: Organized and mentored Summer Student Webfest hackathons", year="201~", location="Geneva") }}
   {{ render_timeline_row(title="Volunteering: Organized 5K+ visitor Japanese culture event", year="2011", location="Jaén") }}
 </section>

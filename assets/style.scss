@@ -98,12 +98,18 @@ body {
 
 .header-tagline {
   font-size: 12pt;
-  font-style: italic;
 }
 
 .header-pic {
   width: $sidebar-width;
   left: $document-left-margin;
+
+  .circle {
+    border: 1px solid $red;
+    border-radius: 50%;
+    display: inline-block;
+    padding: 4px;
+  }
 
   img {
     border-radius: 50%;
