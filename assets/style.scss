@@ -57,6 +57,11 @@ body {
 
   body {
     width: $letter-width;
+    height: $letter-height;
+  }
+
+  .page {
+    margin: 0;
   }
 }
 
