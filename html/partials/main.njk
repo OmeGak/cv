@@ -1,7 +1,7 @@
 {% macro render_job(title, location, from_dt, to_dt, hint=none, url=none, description=none) %}
   <div class="timeline-entry">
     <div class="entry-meta">
-      <span class="time">{{ from_dt }} &mdash; {{ to_dt }}</span>
+      <span class="time">{{ from_dt }} — {{ to_dt }}</span>
       {% if hint %}
         {{ hint }}
       {% elif url %}
@@ -47,6 +47,16 @@
 <section>
   <h1>Experience</h1>
 
+  {% call render_job(title="Full-Stack Software Engineer", location="United Nations (Geneva)",
+                     from_dt="2019 Nov", to_dt="present", url="https://www.unog.ch",
+                     description="Using Indico, UNOG handles on-site visitors and events with thousands of participants around the world.") %}
+    <ul>
+      <li>Provided strategic advice on product development and architectural decisions.</li>
+      <li>Developed custom features for Indico, both upstream and as add-ons, to meet complex requirements.</li>
+      <li>Introduced agile collaboration methodologies in the team and continuous integration in the project.</li>
+    </ul>
+  {% endcall %}
+
   {% call render_job(title="Chief Technology Officer", location="Bity (Neuchâtel)",
                      from_dt="2017 Mar", to_dt="2019 May", url="https://bity.com",
                      description="Bity is a Swiss tech startup offering cryptocurrency exchange services online.") %}
@@ -54,7 +64,7 @@
       <li>Managed product development,
         wrote a price-tracking software, researched off-chain payment channels.</li>
       <li>Built company culture and set up tools and processes for collaboration within and across different teams.</li>
-      <li>Hired and onboarded +10 engineers and coordinated the transition away from legacy systems.</li>
+      <li>Hired +10 engineers and coordinated the transition from a legacy microservice architecture.</li>
     </ul>
   {% endcall %}
 
@@ -62,8 +72,7 @@
                      from_dt="2013 Mar", to_dt="2017 Feb", url="https://getindico.io",
                      description="Indico is a web application for conference organization used at CERN, UN, Fermilab, and 150+ other places.") %}
     <ul>
-      <li>Refactored entire Python backend and most of the frontend for maintainability, performance, and usability.</li>
-      <li>Migrated the Flask application from using ZODB, an object-oriented database, to PostgreSQL.</li>
+      <li>Rewrote entire Python backend and most of the frontend for maintainability, performance, and usability.</li>
       <li>More: LDAP integration, devops, user support, technical training, open source management.</li>
     </ul>
   {% endcall %}
@@ -78,45 +87,36 @@
     </ul>
   {% endcall %}
   {% call render_job(title="Master in Computer Science", location="University of Jaén",
-                     from_dt="2010 Sep", to_dt="2012 Jul", hint="GPA: 3.54") %}
+                     from_dt="2010 Sep", to_dt="2012 Jul", hint="GPA: 3.54 (top 1)") %}
     <ul>
       <li>Thesis: Evacuation route discovery on catastrophe scenarios using ant colony optimization.</li>
       <li>Exchange programs at <em>University of Central Florida</em> and <em>Tokyo University of Science</em>.</li>
     </ul>
   {% endcall %}
   {% call render_job(title="Degree in Computer Engineering", location="University of Jaén",
-                     from_dt="2007 Sep", to_dt="2010 Jul", hint="GPA: 2.39") %}
+                     from_dt="2007 Sep", to_dt="2010 Jul", hint="GPA: 2.39 (top 1)") %}
     <ul>
-      <li>Directed and hosted a weekly program about technology at <em>UniRadio Jaén</em> radio station.</li>
-      <li>Was the main organizer of Microsoft <em>.NET Club</em> events at my university.</li>
+      <li>Obtained Platinum Curriculum recognition for academic and social merits.</li>
+      <li>Run a weekly podcast about web technologies at <em>UniRadio Jaén</em> radio station.</li>
     </ul>
   {% endcall %}
 </section>
 
 <section>
   <h1>Training</h1>
+  {{ render_timeline_row(title="Blockchain Developer", year="2019", location="University of Nicosia",
+                         description="Digital currency programming, security in cryptographic systems, applications of Bitcoin and Ethereum.") }}
   {{ render_timeline_row(title="Certified White Hat", year="2016", location="CERN",
                          description="Injections, cross-site scripting, request forgery, race conditions, framework exploits, etc.") }}
   {{ render_timeline_row(title="CERN School of Computing", year="2015", location="University of Kavala",
                          description="Multicore programming, architecture performance tuning, cloud storage, networking QoS, data analysis.") }}
-  {{ render_timeline_row(title="Advanced Python", year="2014", location="CERN") }}
 </section>
 
 <section>
-  <h1>Awards</h1>
-  {{ render_timeline_row(title="Platinum Curriculum recognition for academic and social merits",
-                         year="2012", location="University of Jaén") }}
-  {{ render_timeline_row(title="Top of my Class at Master in Computer Science",
-                         year="2012", location="University of Jaén") }}
-  {{ render_timeline_row(title="Top of my Class at Degree in Computer Engineering",
-                         year="2010", location="University of Jaén") }}
-</section>
-
-<section>
-  <h1>And other stuff</h1>
-  {{ render_timeline_row(title="Talks: \"Computing for decentralized systems\" and \"The rise of digital nations\"", year="2018") }}
-  {{ render_timeline_row(title="Talks: \"The path of code linting\" and \"Flex-box, the yoga of CSS\"", year="2017") }}
-  {{ render_timeline_row(title="Workshop: Hands-on tutorial on Git", year="2016") }}
-  {{ render_timeline_row(title="Volunteering: Organized and mentored Summer Student Webfest hackathons", year="201~", location="Geneva") }}
-  {{ render_timeline_row(title="Volunteering: Organized 5K+ visitor Japanese culture event", year="2011", location="Jaén") }}
+  <h1>And some other stuff</h1>
+  {{ render_timeline_row(title="Talks: \"Sharp forks — On open source governance\"", year="2019", location="Chaos Communication Congress") }}
+  {{ render_timeline_row(title="Talks: \"Computing for decentralized systems\"", year="2018", location="CERN") }}
+  {{ render_timeline_row(title="Talks: \"The path of code linting\" and \"Flex-box, the yoga of CSS\"", year="2017", location="CERN") }}
+  {{ render_timeline_row(title="Volunteering: Organized Swiss Cryptoeconomics assembly", year="2018 —", location="Chaos Communication Congress") }}
+  {{ render_timeline_row(title="Volunteering: Organized and mentored multiple hackathons", year="2014 —", location="CERN") }}
 </section>
